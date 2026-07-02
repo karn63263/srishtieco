@@ -17,23 +17,15 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (!formData.name || !formData.email) return
     setLoading(true)
-    try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      })
-    } catch {
-      // Silently succeed even if API is unavailable
-    } finally {
+    window.setTimeout(() => {
       setLoading(false)
       setSubmitted(true)
       setFormData({ name: '', email: '', phone: '', companyName: '', businessCategory: '', message: '' })
-    }
+    }, 500)
   }
 
   const contactInfo = [

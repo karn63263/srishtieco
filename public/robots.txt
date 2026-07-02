@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /dashboard/
+Disallow: /portal
+Disallow: /api/
+
+Sitemap: https://srishtieco.vercel.app/sitemap.xml

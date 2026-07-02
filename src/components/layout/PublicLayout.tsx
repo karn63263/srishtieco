@@ -33,11 +33,10 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
     <div className="min-h-screen bg-[#021C18]">
       <nav
         aria-label="Main navigation"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
             ? 'bg-[#021C18]/90 backdrop-blur-xl border-b border-[#044036]/50'
             : 'bg-transparent'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
@@ -55,11 +54,10 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    location.pathname === link.href
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${location.pathname === link.href
                       ? 'text-[#00E676] bg-[#044036]/50'
                       : 'text-[#81C784] hover:text-[#E0F2E9] hover:bg-[#044036]/30'
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -67,6 +65,14 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
             </div>
 
             <div className="hidden lg:flex items-center gap-3">
+              <Link to="/portal/login">
+                <Button
+                  size="sm"
+                  className="bg-gradient-to-r from-[#00E676] to-[#00BFA5] text-[#021C18] font-semibold rounded-full px-5 hover:shadow-glow transition-all"
+                >
+                  Client Portal
+                </Button>
+              </Link>
               <Link to="/contact">
                 <Button
                   size="sm"
@@ -96,16 +102,20 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
-                    location.pathname === link.href
+                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${location.pathname === link.href
                       ? 'text-[#00E676] bg-[#044036]/50'
                       : 'text-[#81C784] hover:text-[#E0F2E9] hover:bg-[#044036]/30'
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-3 border-t border-[#044036]/50">
+              <div className="pt-3 border-t border-[#044036]/50 space-y-2">
+                <Link to="/portal/login" className="block">
+                  <Button className="w-full bg-gradient-to-r from-[#00E676] to-[#00BFA5] text-[#021C18] font-semibold rounded-full hover:shadow-glow">
+                    Client Portal
+                  </Button>
+                </Link>
                 <Link to="/contact" className="block">
                   <Button className="w-full bg-[#FF6B6B] hover:bg-[#FF6B6B]/90 text-white">
                     Get Consultation
